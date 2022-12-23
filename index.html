@@ -51,7 +51,6 @@
                     // counter pick
                     if (computer === "paper") {
                         return "computer";
-                    
                     }   // tie 
                     else if (computer === player) {
                         return "tie";
@@ -64,8 +63,7 @@
                 case "paper":
                     // counter pick
                     if (computer === "scissors") {
-                        return "computer";
-                    
+                        return "computer";              
                     }   // tie 
                     else if (computer === player) {
                         return "tie";
@@ -79,7 +77,6 @@
                     // counter pick
                     if (computer === "rock") {
                         return "computer";
-                    
                     }   // tie 
                     else if (computer === player) {
                         return "tie";
@@ -105,17 +102,17 @@
                 c = computerSelection(choices);
                 
                 switch(playRound(p, c)) {
-                case "player":
-                    console.log(`You win, ${p} beats ${c}.`);
-                    playerScore++;
-                    break;
-                case "computer":
-                    console.log(`You lose, ${c} beats ${p}.`);
-                    computerScore++;
-                    break;
-                case "tie":
-                    console.log(`Tie, the computer also picked ${c}.`);
-                    break;
+                    case "player":
+                        console.log(`You win, ${p} beats ${c}.`);
+                        playerScore++;
+                        break;
+                    case "computer":
+                        console.log(`You lose, ${c} beats ${p}.`);
+                        computerScore++;
+                        break;
+                    case "tie":
+                        console.log(`Tie, the computer also picked ${c}.`);
+                        break;
                 }
             }
 
