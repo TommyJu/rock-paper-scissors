@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        //Rock paper scissors
+
+        /*
+        playerSelection() function will allow the user to input 
+        either 'rock', 'paper', or 'scissors' 
+        (case-insensitive) via a prompt.
+
+        computerSelection() function will randomly pick one of the
+        three options
+
+        Create a playRound() function to compare playerSelection() 
+        with computerselection() to decide a winner 
+
+        Write a function called game(), call playRound() inside of
+        this function to play a 5 round game (using a for loop).
+        
+        Keep track of the score and report the winner at the end
+            Inside game(), have an accumulator that increments
+            for every win. Once the for loop is complete, console.log()
+            the winner and score by comparing the two accumulators.
+
+            I may have to increment the accumulators AND print the
+            round result at the same time inside of the game loop
+            because every time you call the playRound() function
+            you get a different result.
+            This will also allow you to limit the playRound() function
+            to performing one task only.
+
+        */
+        
+        // Returns user input as string (rock, paper, or scissors)
+        function playerSelection() {
+            return prompt("Rock, paper, or scissors?").toLowerCase();
+        }
+        
+        // Returns string (rock, paper, or scissors)
+        let choices = ["rock", "paper", "scissors"];
+        function computerSelection(choices) {
+            return choices[Math.floor(Math.random()*choices.length)];
+        }
+
+        // Takes functions playerSelection, and computerSelection as arguments
+        // for every user pick; there is a counter pick, a match, and a non-match
+        // Returns string "player", "computer", or "tie" to denote winner/tie
+        function playRound(player, computer) {
+            switch(player) {
+                case "rock":
+                    // counter pick
+                    if (computer === "paper") {
+                        return "computer";
+                    
+                    }   // tie 
+                    else if (computer === player) {
+                        return "tie";
+                    }   // win condition 
+                    else {
+                        return "player";
+                    }
+                    break;
+
+                case "paper":
+                    // counter pick
+                    if (computer === "scissors") {
+                        return "computer";
+                    
+                    }   // tie 
+                    else if (computer === player) {
+                        return "tie";
+                    }   // win condition 
+                    else {
+                        return "player";
+                    }
+                    break;
+
+                case "scissors":
+                    // counter pick
+                    if (computer === "rock") {
+                        return "computer";
+                    
+                    }   // tie 
+                    else if (computer === player) {
+                        return "tie";
+                    }   // win condition 
+                    else {
+                        return "player";
+                    }
+                    break;
+            }
+        }
+
+        // game loop
+        function game() {
+            // accumulators
+            let playerScore = 0;
+            let computerScore = 0;
+            // used to store the value of playerSelection and computerSelection for use in string template
+            let p = "";
+            let c = "";
+
+            for (let i=0; i<5; i++) {
+                p = playerSelection();
+                c = computerSelection(choices);
+                
+                switch(playRound(p, c)) {
+                case "player":
+                    console.log(`You win, ${p} beats ${c}.`);
+                    playerScore++;
+                    break;
+                case "computer":
+                    console.log(`You lose, ${c} beats ${p}.`);
+                    computerScore++;
+                    break;
+                case "tie":
+                    console.log(`Tie, the computer also picked ${c}.`);
+                    break;
+                }
+            }
+
+           // end of game results
+           if ((playerScore - computerScore) === 0) {
+                console.log(`It\'s a tie! You and the computer both won ${computerScore} games.`);
+            }
+            else if ((playerScore - computerScore) > 0) {
+                console.log(`You win!\nPlayer: ${playerScore} Computer: ${computerScore}`);
+            }
+            else {
+                console.log(`You lose!\nPlayer: ${playerScore} Computer: ${computerScore}`);
+            }
+        }
+        game();
+    </script>
+</html>
