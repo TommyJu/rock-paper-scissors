@@ -3,8 +3,6 @@
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,6 +21,7 @@ body {
 }
 
 .result-container {
+    margin-top: 2rem;
     height: 1rem;
     display: flex;
     flex-direction: column;
