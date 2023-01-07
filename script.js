@@ -128,7 +128,7 @@ const roundResult = document.querySelector('#round-result');
 const gameResult = document.querySelector('#game-result');
 const playAgainButton = document.querySelector('#play-again-btn');
 const playButton = document.querySelector('#play-btn');
-const buttonContainer = document.querySelector('#button-container');
+const rpsButtons = document.querySelector('#rps-buttons');
 const scoreBoard = document.querySelector('#score-board');
 // Assign each button with a parameter from listOfChoices ('rock', 'paper', or 'scissors')
 for (let i=0; i<3; i++) {
@@ -149,7 +149,7 @@ buttons.forEach((button) => {
 
 playAgainButton.addEventListener('click', playAgain);
 playButton.addEventListener('click', () => {
-    buttonContainer.classList.toggle('hide-element');
+    rpsButtons.classList.toggle('hide-element');
     playButton.classList.toggle('hide-element');
 }, {once : true});
 

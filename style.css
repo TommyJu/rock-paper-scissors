@@ -9,4 +9,22 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
+}
+
+#rps-buttons {
+
+}
+
+.play-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-container {
+    height: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
