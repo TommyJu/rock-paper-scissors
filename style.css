@@ -23,7 +23,6 @@ body {
 }
 
 .result-container {
-    margin-top: 2rem;
     height: 1rem;
     display: flex;
     flex-direction: column;
